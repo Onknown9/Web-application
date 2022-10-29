@@ -1,0 +1,40 @@
+﻿@model NewProductForDB
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>New Product</title>
+</head>
+<body>
+    <form asp-action="NewProduct" method="post">
+        <p id="new-p">
+
+        <p><label>Название:</label></p>
+
+        <p><input asp-for="Name"/></p>
+
+
+
+        <p><label>Цена:</label></p>
+
+        <p><input asp-for="Cost" /></p>
+
+
+        <p>
+            <select asp-for="Answer">
+                <option value="0">Добавить</option>
+                <option value="1">Удалить</option>
+                <option value="2">Изменить цену</option>
+            </select>
+        </p>
+
+        <button type="submit">Подтвердить</button>
+
+    </form>
+</body>
+</html>

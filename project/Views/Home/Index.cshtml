@@ -1,0 +1,37 @@
+﻿@model List
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Home Page</title>
+</head>
+<body>
+    <form asp-action="NewProduct" method="post">
+        @ViewBag.Greeting
+        <p>Список товаров:</p>
+        <table>
+            <thead>
+                <tr>
+                    <th>Название</th>
+                    <th>Цена</th>
+            </thead>
+            <tbody>
+                @foreach (ProductsInfo r in Model.list)
+                {
+                    <tr>
+
+                        <td>@r.Name</td>
+                        <td>@r.Cost ₴</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+        <button type="submit">Изменить список</button>
+    </form>
+</body>
+</html>
